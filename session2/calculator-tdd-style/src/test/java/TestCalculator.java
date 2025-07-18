@@ -65,4 +65,34 @@ public class TestCalculator {
         assertEquals(4.0,difference);
     }
 
+    @Test
+    void productIntTest(){
+        int product = calculator.multiply(1,5);
+        assertEquals(5,product);
+    }
+
+    @Test
+    void productLongTest(){
+        long product = calculator.multiply(-1,5);
+        assertEquals(-5,product);
+    }
+
+    @Test
+    void productShortTest(){
+        short product = (short) calculator.multiply(2,-4);
+        assertEquals(-8,product);
+    }
+
+    @Test
+    void productFloatTest(){
+        float product = calculator.multiply(3f,7f);
+        assertEquals(21,product,.001);
+    }
+
+    @Test
+    void productDoubleTest(){
+        double product = calculator.multiply(6.0,2.0);
+        assertEquals(12.0,product);
+    }
+
 }
