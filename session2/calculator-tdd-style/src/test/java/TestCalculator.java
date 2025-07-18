@@ -95,4 +95,45 @@ public class TestCalculator {
         assertEquals(12.0,product);
     }
 
+    @Test
+    void quotientIntTest(){
+        int quotient = calculator.divide(5,1);
+        assertEquals(5,quotient);
+    }
+
+    @Test
+    void quotientLongTest(){
+        long quotient = calculator.divide(-5,1);
+        assertEquals(-5,quotient);
+    }
+
+    @Test
+    void quotientShortTest(){
+        short quotient = (short) calculator.divide(-4,2);
+        assertEquals(-2,quotient);
+    }
+
+    @Test
+    void quotientFloatTest(){
+        float quotient = calculator.divide(-5f,1f);
+        assertEquals(-5,quotient);
+    }
+
+    @Test
+    void quotientDoubleTest(){
+        double quotient = calculator.divide(-4.0,2.0);
+        assertEquals(-2.0,quotient);
+    }
+
+    @Test
+    void quotientFloatZeroTest(){
+        ArithmeticException exception = assertThrows(ArithmeticException.class, ()->calculator.divide(5f,0f));
+        assertEquals("Division by 0",exception.getMessage());
+    }
+
+    @Test
+    void quotientDoubleZeroTest(){
+        ArithmeticException exception = assertThrows(ArithmeticException.class, ()->calculator.divide(5.0,0.0));
+        assertEquals("Division by 0",exception.getMessage());
+    }
 }
