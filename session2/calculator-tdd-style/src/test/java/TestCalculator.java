@@ -35,4 +35,34 @@ public class TestCalculator {
         assertEquals(8.0,sum);
     }
 
+    @Test
+    void differenceIntTest(){
+        int difference = calculator.subtract(1,5);
+        assertEquals(-4,difference);
+    }
+
+    @Test
+    void differenceLongTest(){
+        long difference = calculator.subtract(-1,5);
+        assertEquals(-6,difference);
+    }
+
+    @Test
+    void differenceShortTest(){
+        short difference = (short) calculator.subtract(2,-4);
+        assertEquals(6,difference);
+    }
+
+    @Test
+    void differenceFloatTest(){
+        float difference = calculator.subtract(3f,7f);
+        assertEquals(-4,difference,.001);
+    }
+
+    @Test
+    void differenceDoubleTest(){
+        double difference = calculator.subtract(6.0,2.0);
+        assertEquals(4.0,difference);
+    }
+
 }
